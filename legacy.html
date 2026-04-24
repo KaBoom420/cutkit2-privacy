@@ -1,42 +1,299 @@
-**Digital Services Act (EU) — Labels & Markings**
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CutKit 2 — DSA Labels & Markings</title>
+  <meta name="description" content="Digital Services Act (EU) Labels and Markings information for CutKit 2." />
 
-**Application Name:** CutKit 2
-**Developer / Trader:** Andrii Kostiushyn
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111827;
+      --panel-2: #162033;
+      --text: #eef4ff;
+      --muted: #aab7cc;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #63b3ff;
+      --accent-2: #8fd3ff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+    }
 
----
+    * {
+      box-sizing: border-box;
+    }
 
-### Business Information
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(99, 179, 255, 0.18), transparent 32%),
+        radial-gradient(circle at 80% 0%, rgba(143, 211, 255, 0.12), transparent 28%),
+        linear-gradient(135deg, #07101f 0%, #0b1220 50%, #07111d 100%);
+      line-height: 1.6;
+    }
 
-**Name:** Andrii Kostiushyn
-**Business Name:** KaBoom Software
-**Country:** Czech Republic
+    .grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.16;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
 
----
+    .wrap {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0;
+      position: relative;
+    }
 
-### Contact Information
+    .card {
+      background: linear-gradient(180deg, rgba(22, 32, 51, 0.96), rgba(17, 24, 39, 0.96));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-**Email:** [kaboomsoftware@gmail.com](mailto:kaboomsoftware@gmail.com)
+    header {
+      padding: 38px 42px 30px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(99, 179, 255, 0.14), transparent 45%),
+        rgba(255, 255, 255, 0.02);
+    }
 
-For any inquiries regarding this application, including legal or compliance matters, please contact us via the email above.
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid rgba(99, 179, 255, 0.35);
+      border-radius: 999px;
+      color: var(--accent-2);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      background: rgba(99, 179, 255, 0.08);
+    }
 
----
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
 
-### Product Information
+    .subtitle {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
 
-CutKit 2 is a software tool designed for optimizing the layout of rectangular parts on material sheets. It is intended for use in industries such as printing, manufacturing, CNC cutting, and similar fields where efficient material usage is required.
+    main {
+      padding: 34px 42px 42px;
+    }
 
----
+    .section {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
 
-### Compliance
+    .section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
 
-This application complies with applicable European Union regulations, including the Digital Services Act (DSA). No physical goods are sold through this application.
+    h2 {
+      margin: 0 0 18px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
 
----
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
 
-### Liability Disclaimer
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
 
-The application is provided “as is” without warranties of any kind. The developer is not responsible for any material losses or damages resulting from the use of generated layouts.
+    .info {
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+    }
 
----
+    .label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
 
-**Last updated:** 2026
+    .value {
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 650;
+      word-break: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(99, 179, 255, 0.08);
+      color: var(--text);
+    }
+
+    footer {
+      padding: 24px 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    @media (max-width: 720px) {
+      header,
+      main,
+      footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid"></div>
+
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="badge">EU Digital Services Act</div>
+        <h1>Labels &amp; Markings</h1>
+        <p class="subtitle">
+          Public trader and compliance information for CutKit 2, provided in accordance
+          with applicable European Union transparency requirements.
+        </p>
+      </header>
+
+      <main>
+        <section class="section">
+          <h2>Application Information</h2>
+          <div class="info-grid">
+            <div class="info">
+              <span class="label">Application Name</span>
+              <span class="value">CutKit 2</span>
+            </div>
+            <div class="info">
+              <span class="label">Application Type</span>
+              <span class="value">Layout optimization software</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Trader Information</h2>
+          <div class="info-grid">
+            <div class="info">
+              <span class="label">Developer / Trader</span>
+              <span class="value">Andrii Kostiushyn</span>
+            </div>
+            <div class="info">
+              <span class="label">Business Name</span>
+              <span class="value">KaBoom Software</span>
+            </div>
+            <div class="info">
+              <span class="label">Country</span>
+              <span class="value">Czech Republic</span>
+            </div>
+            <div class="info">
+              <span class="label">Contact Email</span>
+              <span class="value">
+                <a href="mailto:kaboomsoftware@gmail.com">kaboomsoftware@gmail.com</a>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Product Information</h2>
+          <p>
+            CutKit 2 is a software tool designed for optimizing the layout of rectangular
+            parts on material sheets. It helps users estimate material usage and prepare
+            efficient layouts for cutting, manufacturing, printing, CNC workflows, PCB
+            panelization, signage production, and similar real-world tasks.
+          </p>
+          <p>
+            The application provides calculation results and export options intended to
+            support planning and production preparation.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Compliance Information</h2>
+          <div class="notice">
+            This page provides public trader, contact, and product information for CutKit 2
+            in accordance with the European Union Digital Services Act.
+          </div>
+          <p style="margin-top: 16px;">
+            No physical goods are sold through this application.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Liability Disclaimer</h2>
+          <p>
+            The application is provided “as is” without warranties of any kind. Users are
+            responsible for verifying all dimensions, calculations, layouts, and production
+            parameters before using generated results in real manufacturing or cutting
+            processes.
+          </p>
+          <p>
+            The developer is not responsible for material losses, production errors, or
+            damages resulting from the use of generated layouts.
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <span>© 2026 KaBoom Software</span>
+        <span>Last updated: 2026</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
